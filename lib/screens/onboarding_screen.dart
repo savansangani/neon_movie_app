@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:neon_movie_app/components/custom_outline.dart';
 import 'package:neon_movie_app/constant.dart';
+import 'package:neon_movie_app/screens/home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -143,24 +145,27 @@ class OnboardingScreen extends StatelessWidget {
                       end: Alignment.bottomRight,
                       colors: [Constants.kPinkColor, Constants.kGreenColor],
                     ),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Constants.kPinkColor.withOpacity(0.5),
-                            Constants.kGreenColor.withOpacity(0.5)
-                          ],
+                    child: GestureDetector(
+                      onTap: () => Get.offAll(() => const HomeScreen()),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Constants.kPinkColor.withOpacity(0.5),
+                              Constants.kGreenColor.withOpacity(0.5)
+                            ],
+                          ),
                         ),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Constants.kWhiteColor,
+                        child: const Center(
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Constants.kWhiteColor,
+                            ),
                           ),
                         ),
                       ),

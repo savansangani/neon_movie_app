@@ -2,11 +2,13 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import 'package:neon_movie_app/components/masked_image.dart';
 import 'package:neon_movie_app/components/search_field_widget.dart';
 import 'package:neon_movie_app/constant.dart';
 import 'package:neon_movie_app/models/movie.dart';
+import 'package:neon_movie_app/screens/movie_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -155,6 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           mask = Constants.kMaskCenter;
                         }
                         return GestureDetector(
+                          onTap: () => Get.to(() => const MovieDetailScreen()),
                           child: Container(
                             margin: EdgeInsets.only(
                               left: index == 0 ? 20 : 0,
